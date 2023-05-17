@@ -6,13 +6,7 @@ import csv
 
 from faker import Faker
 import csv
-
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
+import pandas as pd
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -51,9 +45,14 @@ if __name__ == '__main__':
     # output.close()
 
     # READING CSVs
-    with open('data.CSV') as f:
-        reader = csv.DictReader(f)
-        headers = next(reader)
-        print(headers)
-        for row in reader:
-            print(row['name'])
+    # with open('data.CSV') as f:
+    #     reader = csv.DictReader(f)
+    #     headers = next(reader)
+    #     print(headers)
+    #     for row in reader:
+    #         print(row['name'])
+
+
+    # PANDAS
+    df = pd.read_csv('data.CSV')
+    print(df.head(10))
